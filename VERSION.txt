@@ -1,4 +1,16 @@
-jetty-9.4.22-SNAPSHOT
+jetty-9.4.22.v20191003 - 03 October 2019
+ + 3787 Jetty client sometimes returns EOFException instead of
+   SSLHandshakeException on certificate errors.
+ + 4096 thread in ReservedThreadExecutor does not exit when stopped
+ + 4104 frames are sent through ExtensionStack even if WebSocket Session is
+   closed
+ + 4105 QueuedThreadPool should reuse oldest threads first, to allow idle
+   threads to expire
+ + 4121 QueuedThreadPool should support ThreadFactory behaviors
+ + 4122 QueuedThreadPool should reset thread interrupted on failed run
+ + 4141 ClassCastException with non-async Servlet + async Filter +
+   HttpServletRequestWrapper
+ + 4144 Naked cast to Request should be avoided
 
 jetty-9.4.21.v20190926 - 26 September 2019
  + 97 Permanent UnavailableException thrown during servlet request handling
@@ -9,7 +21,7 @@ jetty-9.4.21.v20190926 - 26 September 2019
  + 1036 Allow easy configuration of Scheduler-Threads and name them more
    appropriate
  + 2815 HPack fields are opaque octets
- + 3040 Allow RFC6265 Cookies to include optional SameSite attribute.
+ + 3040 Allow RFC6265 Cookies to include optional SameSite attribute
  + 3106 WebSocket connection stats and request stats
  + 3734 WebSocket suspend when input closed
  + 3747 Make Jetty Demo work with JPMS
