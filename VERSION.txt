@@ -1,3 +1,5 @@
+jetty-9.4.23-SNAPSHOT
+
 jetty-9.4.22.v20191003 - 03 October 2019
  + 3787 Jetty client sometimes returns EOFException instead of
    SSLHandshakeException on certificate errors.
