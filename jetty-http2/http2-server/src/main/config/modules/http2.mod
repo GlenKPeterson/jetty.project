@@ -29,3 +29,9 @@ etc/jetty-http2.xml
 
 ## Initial session receive window (client to server)
 # jetty.http2.initialSessionRecvWindow=1048576
+
+##
+# jetty.http2.maxSettingsKeys=64
+
+## How many bad frames per second
+# jetty.http2.rateControl=20 / second

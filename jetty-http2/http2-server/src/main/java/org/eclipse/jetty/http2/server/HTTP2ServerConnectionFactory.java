@@ -18,6 +18,7 @@
 
 package org.eclipse.jetty.http2.server;
 
+import java.time.Duration;
 import java.util.Map;
 import java.util.concurrent.TimeoutException;
 
@@ -32,6 +33,7 @@ import org.eclipse.jetty.http2.frames.GoAwayFrame;
 import org.eclipse.jetty.http2.frames.HeadersFrame;
 import org.eclipse.jetty.http2.frames.PushPromiseFrame;
 import org.eclipse.jetty.http2.frames.ResetFrame;
+import org.eclipse.jetty.http2.parser.WindowRateControl;
 import org.eclipse.jetty.io.EndPoint;
 import org.eclipse.jetty.io.EofException;
 import org.eclipse.jetty.server.Connector;
@@ -55,6 +57,8 @@ public class HTTP2ServerConnectionFactory extends AbstractHTTP2ServerConnectionF
     public HTTP2ServerConnectionFactory(@Name("config") HttpConfiguration httpConfiguration, @Name("protocols") String... protocols)
     {
         super(httpConfiguration, protocols);
+        setMaxSettingsKeys(1);
+        setRateControl(new WindowRateControl(10, Duration.ofMillis(100)));
     }
 
     @Override
